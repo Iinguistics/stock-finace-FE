@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { YahooFinanceService } from '../../services/yahoo/yahoo-finance.service';
 
 @Component({
   selector: 'app-landingpage',

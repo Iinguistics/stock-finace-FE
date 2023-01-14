@@ -1,7 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { NotFoundComponent } from './not-found/not-found.component';
+
+const routes: Routes = [
+  {
+    // lazy loading
+    path: '', loadChildren: ()=> import('./home/home.module').then((m)=> m.HomeModule)
+  },
+  {
+    path: '**', component: NotFoundComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
