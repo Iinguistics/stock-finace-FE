@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs';
+import { environment } from '../../../environments/environment';
 import NewsDetailsResponse from './types/NewsDetailsResponse';
 
 @Injectable({
@@ -8,8 +9,8 @@ import NewsDetailsResponse from './types/NewsDetailsResponse';
 })
 export class YahooFinanceService {
   private headers = {
-    'X-RapidAPI-Key': '',
-    'X-RapidAPI-Host': ''
+    'X-RapidAPI-Key': environment.YAHOO_FINANCE_API_KEY,
+    'X-RapidAPI-Host': environment.YAHOO_FINANCE_API_HOST
   };
 
 
@@ -17,8 +18,8 @@ export class YahooFinanceService {
 
   public getNewsDetails() {
     return this.http
-      .get<NewsDetailsResponse>('', {
-        params: {uuid: '', region: 'US'},
+      .get<NewsDetailsResponse>('https://apidojo-yahoo-finance-v1.p.rapidapi.com/news/v2/get-details', {
+        params: {uuid: environment.YAHOO_FINANCE_API_UUID, region: 'US'},
         headers: this.headers
       })
       .pipe(map((res) => res.data.contents[0].content));

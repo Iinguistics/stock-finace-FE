@@ -1,33 +1,31 @@
 interface NewsDetailsResponse {
-    content: {
-      canonicalUrl: {
-        url: string;
-      };
-      authors: [
-        {
-          author: {
-            displayName: string;
-          };
-        }
-      ];
-      provider: {
+  canonicalUrl: {
+    url: string;
+  };
+  authors: [
+    {
+      author: {
         displayName: string;
       };
-      pubDate: string;
-      summary: string;
-      title: string;
-      body: {
-        data: {
-          partnerData: {
-            cover: {
-              image: {
-                originalUrl: string;
-              };
-            };
+    }
+  ];
+  provider: {
+    displayName: string;
+  };
+  pubDate: string;
+  summary: string;
+  title: string;
+  body: {
+    data: {
+      partnerData: {
+        cover: {
+          image: {
+            originalUrl: string;
           };
         };
       };
     };
+  };
 }
 
 export default NewsDetailsResponse;
