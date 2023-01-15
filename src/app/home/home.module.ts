@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { SharedModule } from '../shared/shared.module';
+import { TrendingTickersComponent } from './trending-tickers/trending-tickers.component';
 
 
 @NgModule({
   declarations: [
-    LandingpageComponent
+    LandingpageComponent,
+    TrendingTickersComponent
   ],
   imports: [
     CommonModule,
