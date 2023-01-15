@@ -1,4 +1,4 @@
-interface TrendingTickerResponse {
+interface TrendingTicker {
   trendingScore: number;
   regularMarketChange: number;
   regularMarketChangePercent: number;
@@ -7,6 +7,6 @@ interface TrendingTickerResponse {
   shortName: string;
   tradeable: boolean;
   symbol: string;
-}[];
+};
 
-export default TrendingTickerResponse;
+export default TrendingTicker;
