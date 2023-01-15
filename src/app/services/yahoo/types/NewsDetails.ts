@@ -1,4 +1,4 @@
-interface NewsDetailsResponse {
+interface NewsDetails {
   canonicalUrl: {
     url: string;
   };
@@ -28,4 +28,4 @@ interface NewsDetailsResponse {
   };
 }
 
-export default NewsDetailsResponse;
+export default NewsDetails;

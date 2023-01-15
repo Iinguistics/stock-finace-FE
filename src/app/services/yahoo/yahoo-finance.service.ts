@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
-import NewsDetailsResponse from './types/NewsDetailsResponse';
+import NewsDetails from './types/NewsDetails';
 import TrendingTicker from './types/TrendingTicker';
 
 @Injectable({
@@ -17,7 +17,7 @@ export class YahooFinanceService {
 
   constructor(private http: HttpClient) {}
 
-  public getNewsDetails():Observable<NewsDetailsResponse> {
+  public getNewsDetails():Observable<NewsDetails> {
     return this.http
       .get<any>('https://apidojo-yahoo-finance-v1.p.rapidapi.com/news/v2/get-details', {
         params: {uuid: environment.YAHOO_FINANCE_API_UUID, region: 'US'},

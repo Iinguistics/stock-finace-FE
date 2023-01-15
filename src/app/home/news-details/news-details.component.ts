@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { YahooFinanceService } from '../../services/yahoo/yahoo-finance.service';
-import NewsDetailsResponse from 'src/app/services/yahoo/types/NewsDetailsResponse';
+import NewsDetails from 'src/app/services/yahoo/types/NewsDetails';
 
 @Component({
   selector: 'app-news-details',
@@ -9,7 +9,7 @@ import NewsDetailsResponse from 'src/app/services/yahoo/types/NewsDetailsRespons
 })
 export class NewsDetailsComponent {
   isLoading:boolean = true;
-  newsData:NewsDetailsResponse | null = null;
+  newsData:NewsDetails | null = null;
 
   constructor(private yahooService: YahooFinanceService){}
 
