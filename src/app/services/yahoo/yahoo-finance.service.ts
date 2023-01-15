@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import NewsDetailsResponse from './types/NewsDetailsResponse';
+import TrendingTickerResponse from './types/TrendingTickersResponse';
 
 @Injectable({
   providedIn: 'root',
@@ -24,4 +25,14 @@ export class YahooFinanceService {
       })
       .pipe(map((res) => res.data.contents[0].content));
   }
+
+  public getTrendingTickers():Observable<TrendingTickerResponse> {
+    return this.http
+      .get<any>('https://apidojo-yahoo-finance-v1.p.rapidapi.com/market/get-trending-tickers', {
+        params: {region: 'US'},
+        headers: this.headers
+      })
+      .pipe(map((res) => res.finance.result[0].quotes));
+  }
+
 }

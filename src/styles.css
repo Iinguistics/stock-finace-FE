@@ -1,1 +1,8 @@
-@import 'bulma/css/bulma.css'
+@import 'bulma/css/bulma.css';
+
+/* body {
+  background-color: #333;
+  height: 100vh;
+  transition: all 0.4s ease;
+  color: #fff;
+} */
