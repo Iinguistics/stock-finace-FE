@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import TrendingTicker from 'src/app/services/yahoo/types/TrendingTicker';
 
 @Component({
   selector: 'app-trending-tickers-card',
@@ -6,5 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./trending-tickers-card.component.css']
 })
 export class TrendingTickersCardComponent {
+  @Input() ticker!: TrendingTicker;
+
 
 }

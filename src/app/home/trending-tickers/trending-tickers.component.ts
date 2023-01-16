@@ -9,7 +9,7 @@ import TrendingTicker from 'src/app/services/yahoo/types/TrendingTicker';
 })
 export class TrendingTickersComponent {
   isLoading:boolean = true;
-  trendingTickersData:TrendingTicker[] | null = null;
+  data:TrendingTicker[] | null = null;
 
 
   constructor(private yahooService: YahooFinanceService){}
@@ -22,7 +22,7 @@ export class TrendingTickersComponent {
 
   private getTrendingTickers():void{
     this.yahooService.getTrendingTickers().subscribe((response)=> {
-      this.trendingTickersData = response;
+      this.data = response.slice(0, 6);
       console.log(response);
      // this.isLoading = false;
     });
