@@ -1,1 +1,14 @@
-<p>news-details works!</p>
+<article *ngIf="newsData" class="message">
+  <div class="message-header">
+    <p>{{ newsData.title }}</p>
+  </div>
+  <div class="message-body">
+    <figure class="image is-128x128">
+      <img [src]="newsData.body.data.partnerData.cover.image.originalUrl">
+    </figure>
+   {{ newsData.summary }}
+   <br />
+   <small>By: {{ newsData.authors[0].author.displayName }}</small>
+  </div>
+</article>
+
