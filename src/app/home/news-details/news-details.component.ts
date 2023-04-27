@@ -16,7 +16,6 @@ export class NewsDetailsComponent {
 
   // ngOnInit() {
   //   this.getNews()
-  //   this.isLoading = false;
   // }
 
 
@@ -24,7 +23,7 @@ export class NewsDetailsComponent {
     this.yahooService.getNewsDetails().subscribe((response)=> {
       this.newsData = response;
       console.log(response);
-     // this.isLoading = false;
+     this.isLoading = false;
     });
   }
 

@@ -5,28 +5,23 @@ import TrendingTicker from 'src/app/services/yahoo/types/TrendingTicker';
 @Component({
   selector: 'app-trending-tickers',
   templateUrl: './trending-tickers.component.html',
-  styleUrls: ['./trending-tickers.component.css']
+  styleUrls: ['./trending-tickers.component.css'],
 })
 export class TrendingTickersComponent {
-  isLoading:boolean = true;
-  data:TrendingTicker[] | null = null;
+  isLoading: boolean = true;
+  data: TrendingTicker[] | null = null;
 
-
-  constructor(private yahooService: YahooFinanceService){}
+  constructor(private yahooService: YahooFinanceService) {}
 
   // ngOnInit() {
   //   this.getTrendingTickers();
-  //   this.isLoading = false;
   // }
 
-
-  private getTrendingTickers():void{
-    this.yahooService.getTrendingTickers().subscribe((response)=> {
+  private getTrendingTickers(): void {
+    this.yahooService.getTrendingTickers().subscribe((response) => {
       this.data = response.slice(0, 6);
       console.log(response);
-     // this.isLoading = false;
+      this.isLoading = false;
     });
   }
-
-
 }
