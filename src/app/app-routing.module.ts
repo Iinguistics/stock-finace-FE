@@ -5,8 +5,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   {
-    // lazy loading
     path: '', loadChildren: ()=> import('./home/home.module').then((m)=> m.HomeModule)
+  },
+  {
+    path: 'details', loadChildren: ()=> import('./details/details.module').then((m)=> m.DetailsModule)
   },
   {
     path: '**', component: NotFoundComponent
