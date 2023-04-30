@@ -4,6 +4,7 @@ import { HeroComponent } from './hero/hero.component';
 import { LoaderComponent } from './loader/loader.component';
 import { BarComponent } from './charts/bar/bar.component';
 import { ScatterComponent } from './charts/scatter/scatter.component';
+import { LineComponent } from './charts/line/line.component';
 
 
 
@@ -12,7 +13,8 @@ import { ScatterComponent } from './charts/scatter/scatter.component';
     HeroComponent,
     LoaderComponent,
     BarComponent,
-    ScatterComponent
+    ScatterComponent,
+    LineComponent
   ],
   imports: [
     CommonModule
@@ -20,6 +22,7 @@ import { ScatterComponent } from './charts/scatter/scatter.component';
   exports: [
     BarComponent,
     HeroComponent,
+    LineComponent,
     LoaderComponent,
     ScatterComponent
   ]
