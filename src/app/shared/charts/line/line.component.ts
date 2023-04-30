@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ChartService } from '../../../services/charts/chart.service';
 import Chart from 'chart.js/auto';
 
 @Component({
@@ -7,6 +8,9 @@ import Chart from 'chart.js/auto';
   styleUrls: ['./line.component.css'],
 })
 export class LineComponent {
+  constructor(private chartService: ChartService) {}
+  @Input() ticker!: string;
+
   public chart: any;
 
   private data = {
@@ -35,9 +39,13 @@ export class LineComponent {
     ],
   };
 
-
   ngOnInit(): void {
     this.createChart();
+    // this.setLineChartData();
+  }
+
+  private setLineChartData() {
+    this.chartService.getLineChartData(this.ticker);
   }
 
   private createChart() {
