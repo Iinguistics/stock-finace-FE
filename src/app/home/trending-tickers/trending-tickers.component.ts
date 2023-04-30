@@ -14,10 +14,10 @@ export class TrendingTickersComponent {
   constructor(private yahooService: YahooFinanceService) {}
 
   // ngOnInit() {
-  //   this.getTrendingTickers();
+  //   this.setTrendingTickers();
   // }
 
-  private getTrendingTickers(): void {
+  private setTrendingTickers(): void {
     this.yahooService.getTrendingTickers().subscribe((response) => {
       this.data = response.slice(0, 6);
       console.log(response);
