@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../../../environments/environment';
+import { GetHistoryChart } from './types/Params';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
-import { environment } from '../../../environments/environment';
+import HistoryChart from './types/HistoryChart';
 import NewsDetails from './types/NewsDetails';
 import TrendingTicker from './types/TrendingTicker';
-import { GetHistoryChart } from './types/Params';
-import HistoryChart from './types/HistoryChart';
 
 @Injectable({
   providedIn: 'root',
@@ -57,18 +57,14 @@ export class YahooFinanceService {
       events: 'capitalGain,div,split',
     };
 
-    try {
-      return this.http
-        .get<any>(
-          'https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v3/get-chart',
-          {
-            params,
-            headers: this.headers,
-          }
-        )
-        .pipe(map((res) => res.chart.result[0]));
-    } catch (error: any) {
-      throw new Error(error);
-    }
+    return this.http
+      .get<any>(
+        'https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v3/get-chart',
+        {
+          params,
+          headers: this.headers,
+        }
+      )
+      .pipe(map((res) => res.chart.result[0]));
   }
 }

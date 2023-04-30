@@ -1,5 +1,4 @@
 import { ActivatedRoute } from '@angular/router';
-import { ChartService } from '../../services/charts/chart.service';
 import { Component } from '@angular/core';
 import { YahooFinanceService } from '../../services/yahoo/yahoo-finance.service';
 
@@ -12,7 +11,6 @@ export class DetailspageComponent {
   constructor(
     private route: ActivatedRoute,
     private yahooService: YahooFinanceService,
-    private chartService: ChartService
   ) {}
 
   public ticker: string | null = null;
