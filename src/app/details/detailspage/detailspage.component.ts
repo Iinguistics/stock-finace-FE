@@ -14,7 +14,6 @@ export class DetailspageComponent {
   ) {}
 
   public data: any;
-  public outlookData: any;
   public isLoading: boolean = false;
   public ticker: string | null = null;
 
