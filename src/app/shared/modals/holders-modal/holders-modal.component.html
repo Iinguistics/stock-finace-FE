@@ -1,0 +1,22 @@
+<div class="modal is-active">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Relation</th>
+          <th>Shares Held</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let holder of data">
+          <td>{{ holder.name }}</td>
+          <td>{{ holder.relation }}</td>
+          <td>{{ holder.positionDirect?.fmt ?? holder.positionIndirect?.fmt }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button class="modal-close is-large" aria-label="close" (click)="cancel()"></button>
+</div>

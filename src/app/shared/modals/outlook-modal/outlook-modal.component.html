@@ -1,0 +1,39 @@
+<div class="modal is-active">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="box">
+      <p>Innovation score: {{ data.companyOutlookSummary.innovationScore }}</p>
+      <p>Performance: {{ data.companyOutlookSummary.innovationPerformance }}</p>
+      <p>Current Trend: {{ data.companyOutlookSummary.innovationTrend }}</p>
+      <br />
+      <progress
+        [className]="
+          data.companyOutlookSummary.innovationScore > 50
+            ? ' progress is-primary'
+            : 'progress is-danger'
+        "
+        value="{{ data.companyOutlookSummary.innovationScore }}"
+        max="100"
+      ></progress>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Headline</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data.significantDevelopments">
+            <td>{{ item.date | date}}</td>
+            <td>{{ item.headline }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <button
+    class="modal-close is-large"
+    aria-label="close"
+    (click)="cancel()"
+  ></button>
+</div>
