@@ -20,7 +20,6 @@ export class TrendingTickersComponent {
   private setTrendingTickers(): void {
     this.yahooService.getTrendingTickers().subscribe((response) => {
       this.data = response.slice(0, 6);
-      console.log(response);
       this.isLoading = false;
     });
   }

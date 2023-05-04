@@ -67,4 +67,28 @@ export class YahooFinanceService {
       )
       .pipe(map((res) => res.chart.result[0]));
   }
+
+  public getSummary(ticker: string): Observable<any> {
+    return this.http
+      .get<any>(
+        'https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-summary',
+        {
+          params: { region: 'US', symbol: ticker },
+          headers: this.headers,
+        }
+      )
+      .pipe(map((res) => res));
+  }
+
+  public getOutlook(ticker: string): Observable<any> {
+    return this.http
+      .get<any>(
+        'https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/get-company-outlook',
+        {
+          params: { region: 'US', symbol: ticker },
+          headers: this.headers,
+        }
+      )
+      .pipe(map((res) => res.finance.result));
+  }
 }
