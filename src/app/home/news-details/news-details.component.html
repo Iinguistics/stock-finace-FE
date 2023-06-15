@@ -1,10 +1,10 @@
 <app-loader *ngIf="isLoading"></app-loader>
 
-<article *ngIf="newsData" class="message">
-  <div class="message-header">
-    <p>{{ newsData.title }}</p>
-  </div>
-  <div class="message-body">
+<section *ngIf="newsData" class="hero is-link">
+  <div class="hero-body">
+    <p class="title">
+      {{ newsData.title }}
+    </p>
     <figure class="image is-128x128">
       <img [src]="newsData.body.data.partnerData.cover.image.originalUrl">
     </figure>
@@ -12,4 +12,5 @@
    <br />
    <small>By: {{ newsData.authors[0].author.displayName }}</small>
   </div>
-</article>
+</section>
+

@@ -13,9 +13,9 @@ export class TrendingTickersComponent {
 
   constructor(private yahooService: YahooFinanceService) {}
 
-  // ngOnInit() {
-  //   this.setTrendingTickers();
-  // }
+  ngOnInit() {
+    this.setTrendingTickers();
+  }
 
   private setTrendingTickers(): void {
     this.yahooService.getTrendingTickers().subscribe((response) => {

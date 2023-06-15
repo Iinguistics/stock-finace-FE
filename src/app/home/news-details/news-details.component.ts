@@ -13,9 +13,9 @@ export class NewsDetailsComponent {
 
   constructor(private yahooService: YahooFinanceService) {}
 
-  // ngOnInit() {
-  //   this.getNews()
-  // }
+  ngOnInit() {
+    this.getNews()
+  }
 
   private getNews(): void {
     this.yahooService.getNewsDetails().subscribe((response) => {

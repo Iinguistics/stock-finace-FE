@@ -7,6 +7,9 @@ import HistoryChart from './types/HistoryChart';
 import NewsDetails from './types/NewsDetails';
 import TrendingTicker from './types/TrendingTicker';
 
+// TODO: put in ENV base URL: 'https://apidojo-yahoo-finance-v1.p.rapidapi.com/'
+
+
 @Injectable({
   providedIn: 'root',
 })
